@@ -23,7 +23,6 @@ html,body{ height:100%; margin:0; background:var(--bg); color:var(--text); font-
   gap:14px;
   flex-wrap:wrap;
   align-items:center;
-  justify-content:flex-start;
 }
 #hud .row.small{
   margin-top:6px;
@@ -38,14 +37,14 @@ html,body{ height:100%; margin:0; background:var(--bg); color:var(--text); font-
   min-height:28px;
 }
 
-.hidden{ display:none; }
+.hidden{ display:none !important; }
 
-#overlay, #death{
+.overlay{
   position:fixed; inset:0;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:rgba(0,0,0,.65);
+  background:rgba(0,0,0,.68);
   z-index:50;
 }
 
@@ -57,8 +56,10 @@ html,body{ height:100%; margin:0; background:var(--bg); color:var(--text); font-
   padding:18px;
   box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
+
 .panel h2{ margin:0 0 6px 0; }
 .muted{ color:var(--muted); margin:0 0 14px 0; }
+.tiny{ font-size:12px; margin-top:12px; }
 
 .shop-grid{
   display:grid;
@@ -66,7 +67,6 @@ html,body{ height:100%; margin:0; background:var(--bg); color:var(--text); font-
   gap:10px;
 }
 .shop-btn{
-  pointer-events:auto;
   cursor:pointer;
   border-radius:12px;
   border:1px solid rgba(255,255,255,.10);
@@ -80,17 +80,16 @@ html,body{ height:100%; margin:0; background:var(--bg); color:var(--text); font-
   gap:4px 10px;
 }
 .shop-btn:hover{ border-color:rgba(34,197,94,.35); }
-.shop-btn .title{ font-weight:700; }
+.shop-btn .title{ font-weight:800; }
 .shop-btn .desc{ color:var(--muted); font-size:13px; grid-column:1 / 2; }
-.shop-btn .price{ color:var(--accent); font-weight:800; grid-column:2 / 3; grid-row:1 / 3; align-self:center; }
+.shop-btn .price{ color:var(--accent); font-weight:900; grid-column:2 / 3; grid-row:1 / 3; align-self:center; }
 
 .footer{
   display:flex;
   justify-content:flex-end;
   margin-top:14px;
 }
-.footer button, #restart{
-  pointer-events:auto;
+button{
   cursor:pointer;
   border-radius:10px;
   border:1px solid rgba(255,255,255,.12);
@@ -98,35 +97,4 @@ html,body{ height:100%; margin:0; background:var(--bg); color:var(--text); font-
   color:var(--text);
   padding:10px 12px;
 }
-.footer button:hover, #restart:hover{ border-color:rgba(255,255,255,.25); }
-
-#joyWrap{
-  position:fixed;
-  bottom:18px;
-  left:18px;
-  z-index:20;
-  width:140px;
-  height:140px;
-  display:none;
-  pointer-events:none;
-}
-#joyBase{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  position:relative;
-}
-#joyStick{
-  width:64px;
-  height:64px;
-  border-radius:50%;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.16);
-  position:absolute;
-  left:38px; top:38px;
-}
-@media (pointer:coarse){
-  #joyWrap{ display:block; }
-}
+button:hover{ border-color:rgba(255,255,255,.25); }
