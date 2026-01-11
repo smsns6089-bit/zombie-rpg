@@ -15,17 +15,28 @@
       <div><b>Wave</b>: <span id="wave">1</span></div>
     </div>
     <div class="row small">
-      <div>Move: <b>WASD</b> | Shoot: <b>Click</b> | Reload: <b>R</b> | Shop: stand in <b>SAFE ZONE</b> + <b>E</b></div>
+      <div>Move: <b>WASD</b> | Shoot: <b>Click</b> | Reload: <b>R</b> | Shop: <b>E</b> in SAFE ZONE</div>
       <div class="pill" id="hint"></div>
     </div>
   </div>
 
   <canvas id="game"></canvas>
 
-  <div id="overlay" class="hidden">
+  <!-- START SCREEN -->
+  <div id="start" class="overlay">
+    <div class="panel">
+      <h2>Zombie Survival</h2>
+      <p class="muted">Explore, shoot, loot cash, upgrade in the Safe Zone.</p>
+      <button id="startBtn">Click to Start</button>
+      <p class="muted tiny">Tip: stand in SAFE ZONE and press E to shop.</p>
+    </div>
+  </div>
+
+  <!-- SHOP -->
+  <div id="shop" class="overlay hidden">
     <div class="panel">
       <h2>Shop (Safe Zone)</h2>
-      <p class="muted">Spend cash. Survive longer. Get stronger. 🧟💥</p>
+      <p class="muted">Spend cash. Survive longer. Get stronger.</p>
 
       <div class="shop-grid">
         <button class="shop-btn" id="buyAmmo">
@@ -48,23 +59,17 @@
       </div>
 
       <div class="footer">
-        <button id="closeShop">Close (E)</button>
+        <button id="closeShop">Close (E / ESC)</button>
       </div>
     </div>
   </div>
 
-  <div id="death" class="hidden">
+  <!-- DEATH -->
+  <div id="death" class="overlay hidden">
     <div class="panel">
       <h2>You got eaten 🧟</h2>
-      <p class="muted">Cash and upgrades reset for now (we’ll add saving later).</p>
+      <p class="muted">Prototype reset for now (saving comes later).</p>
       <button id="restart">Restart</button>
-    </div>
-  </div>
-
-  <!-- Mobile joystick -->
-  <div id="joyWrap">
-    <div id="joyBase">
-      <div id="joyStick"></div>
     </div>
   </div>
 
