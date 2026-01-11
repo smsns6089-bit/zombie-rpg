@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Project Game Maker: Zombie Survival (Top-Down)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="hud">
+    <div class="row">
+      <div><b>HP</b>: <span id="hp">100</span></div>
+      <div><b>Ammo</b>: <span id="ammo">12</span>/<span id="mag">12</span> | <b>Reserve</b>: <span id="reserve">48</span></div>
+      <div><b>Cash</b>: $<span id="cash">0</span></div>
+      <div><b>Wave</b>: <span id="wave">1</span></div>
+    </div>
+    <div class="row small">
+      <div>Move: <b>WASD</b> | Shoot: <b>Click</b> | Reload: <b>R</b> | Shop: stand in <b>SAFE ZONE</b> + <b>E</b></div>
+      <div class="pill" id="hint"></div>
+    </div>
+  </div>
+
+  <canvas id="game"></canvas>
+
+  <div id="overlay" class="hidden">
+    <div class="panel">
+      <h2>Shop (Safe Zone)</h2>
+      <p class="muted">Spend cash. Survive longer. Get stronger. 🧟💥</p>
+
+      <div class="shop-grid">
+        <button class="shop-btn" id="buyAmmo">
+          <span class="title">Ammo Pack</span>
+          <span class="desc">+24 reserve ammo</span>
+          <span class="price">$15</span>
+        </button>
+
+        <button class="shop-btn" id="buyMedkit">
+          <span class="title">Medkit</span>
+          <span class="desc">Heal +35 HP (max 100)</span>
+          <span class="price">$20</span>
+        </button>
+
+        <button class="shop-btn" id="buyDamage">
+          <span class="title">Damage Upgrade</span>
+          <span class="desc">+20% bullet damage (stacks)</span>
+          <span class="price">$40</span>
+        </button>
+      </div>
+
+      <div class="footer">
+        <button id="closeShop">Close (E)</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="death" class="hidden">
+    <div class="panel">
+      <h2>You got eaten 🧟</h2>
+      <p class="muted">Cash and upgrades reset for now (we’ll add saving later).</p>
+      <button id="restart">Restart</button>
+    </div>
+  </div>
+
+  <!-- Mobile joystick -->
+  <div id="joyWrap">
+    <div id="joyBase">
+      <div id="joyStick"></div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
